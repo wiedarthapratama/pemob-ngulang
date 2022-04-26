@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:pemob_p1/pages/daftar_page.dart';
+import 'package:pemob_p1/pages/keranjang_page.dart';
+import 'package:pemob_p1/pages/pengaturan_page.dart';
+import 'package:pemob_p1/pages/produk_page.dart';
 import 'package:pemob_p1/pertemuan2.dart';
 import 'package:pemob_p1/pertemuan3.dart';
 import 'package:pemob_p1/pertemuan4.dart';
@@ -24,12 +28,19 @@ class DrawerWidget extends StatelessWidget {
             child: Column(
               children: [
                 CircleAvatar(
+                  key: key,
                   radius: 50,
-                  backgroundImage: NetworkImage(
+                  backgroundImage: const NetworkImage(
                       "https://siakad.esaunggul.ac.id/siakad/siakad/index.php?page=download&type=fotomhs&id=eHFJRHV6YzZmaUsydG5ybiUyRmtZb3cwQ3BITkNsdjl4anFFNyUyQnJlN3ZQdlYyTW1GcEh4dnBrdnBLeHdCM29jb0hzRlJ2SWRSSXg1eWdKJTJCTGhLNjJjMWclM0QlM0Q="),
                 ),
-                Text('Wied Artha Pratama'),
-                Text('20180801316'),
+                Text(
+                  'Wied Artha Pratama',
+                  key: key,
+                ),
+                Text(
+                  '20180801316',
+                  key: key,
+                ),
               ],
             ),
           ),
@@ -41,31 +52,44 @@ class DrawerWidget extends StatelessWidget {
             },
           ),
           ListTile(
-            title: const Text('Pertemuan 2'),
+            title: const Text('Produk'),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => Pertemuan2(
+                  builder: (context) => ProdukPage(
                         key: key,
                       )));
             },
           ),
           ListTile(
-            title: const Text('Pertemuan 3'),
+            title: const Text('Keranjang Belanja'),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => Pertemuan3(
+                  builder: (context) => KeranjangPage(
                         key: key,
                       )));
             },
           ),
           ListTile(
-            title: const Text('Pertemuan 4'),
+            title: const Text('Daftar Keinginan'),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => Pertemuan4(
+                  builder: (context) => DaftarPage(
                         key: key,
                       )));
             },
+          ),
+          ListTile(
+            title: const Text('Pengaturan'),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => PengaturanPage(
+                        key: key,
+                      )));
+            },
+          ),
+          ListTile(
+            title: const Text('Keluar'),
+            onTap: () {},
           ),
         ],
       ),

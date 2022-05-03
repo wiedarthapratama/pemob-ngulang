@@ -3,6 +3,7 @@ import 'package:pemob_p1/models/produk.dart';
 
 import '../drawer.dart';
 import '../models/kategori.dart';
+import 'detail_page.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key}) : super(key: key);
@@ -200,32 +201,41 @@ class _MyHomePageState extends State<MyHomePage> {
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, i) {
-                  return Card(
-                    child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Image.network(buahan[i].foto ?? ''),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    buahan[i].nama ?? '',
-                                    style: const TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 16),
-                                  ),
-                                  SizedBox(
-                                    key: widget.key,
-                                    height: 10,
-                                  ),
-                                  Text('Rp ' + buahan[i].harga.toString())
-                                ]),
-                          )
-                        ]),
+                  return InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => DetailPage(
+                                key: widget.key,
+                                produk: buahan[i],
+                              )));
+                    },
+                    child: Card(
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Image.network(buahan[i].foto ?? ''),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      buahan[i].nama ?? '',
+                                      style: const TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 16),
+                                    ),
+                                    SizedBox(
+                                      key: widget.key,
+                                      height: 10,
+                                    ),
+                                    Text('Rp ' + buahan[i].harga.toString())
+                                  ]),
+                            )
+                          ]),
+                    ),
                   );
                 },
                 itemCount: buahan.length,
@@ -262,32 +272,41 @@ class _MyHomePageState extends State<MyHomePage> {
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, i) {
-                  return Card(
-                    child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Image.network(sayuran[i].foto ?? ''),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    sayuran[i].nama ?? '',
-                                    style: const TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 16),
-                                  ),
-                                  SizedBox(
-                                    key: widget.key,
-                                    height: 10,
-                                  ),
-                                  Text('Rp ' + sayuran[i].harga.toString())
-                                ]),
-                          )
-                        ]),
+                  return InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => DetailPage(
+                                key: widget.key,
+                                produk: umbian[i],
+                              )));
+                    },
+                    child: Card(
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Image.network(sayuran[i].foto ?? ''),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      sayuran[i].nama ?? '',
+                                      style: const TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 16),
+                                    ),
+                                    SizedBox(
+                                      key: widget.key,
+                                      height: 10,
+                                    ),
+                                    Text('Rp ' + sayuran[i].harga.toString())
+                                  ]),
+                            )
+                          ]),
+                    ),
                   );
                 },
                 itemCount: sayuran.length,
@@ -324,32 +343,41 @@ class _MyHomePageState extends State<MyHomePage> {
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, i) {
-                  return Card(
-                    child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Image.network(kacangan[i].foto ?? ''),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    kacangan[i].nama ?? '',
-                                    style: const TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 16),
-                                  ),
-                                  SizedBox(
-                                    key: widget.key,
-                                    height: 10,
-                                  ),
-                                  Text('Rp ' + kacangan[i].harga.toString())
-                                ]),
-                          )
-                        ]),
+                  return InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => DetailPage(
+                                key: widget.key,
+                                produk: kacangan[i],
+                              )));
+                    },
+                    child: Card(
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Image.network(kacangan[i].foto ?? ''),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      kacangan[i].nama ?? '',
+                                      style: const TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 16),
+                                    ),
+                                    SizedBox(
+                                      key: widget.key,
+                                      height: 10,
+                                    ),
+                                    Text('Rp ' + kacangan[i].harga.toString())
+                                  ]),
+                            )
+                          ]),
+                    ),
                   );
                 },
                 itemCount: kacangan.length,
@@ -386,32 +414,41 @@ class _MyHomePageState extends State<MyHomePage> {
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, i) {
-                  return Card(
-                    child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Image.network(umbian[i].foto ?? ''),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    umbian[i].nama ?? '',
-                                    style: const TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 16),
-                                  ),
-                                  SizedBox(
-                                    key: widget.key,
-                                    height: 10,
-                                  ),
-                                  Text('Rp ' + umbian[i].harga.toString())
-                                ]),
-                          )
-                        ]),
+                  return InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => DetailPage(
+                                key: widget.key,
+                                produk: umbian[i],
+                              )));
+                    },
+                    child: Card(
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Image.network(umbian[i].foto ?? ''),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      umbian[i].nama ?? '',
+                                      style: const TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 16),
+                                    ),
+                                    SizedBox(
+                                      key: widget.key,
+                                      height: 10,
+                                    ),
+                                    Text('Rp ' + umbian[i].harga.toString())
+                                  ]),
+                            )
+                          ]),
+                    ),
                   );
                 },
                 itemCount: umbian.length,

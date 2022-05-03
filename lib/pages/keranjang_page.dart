@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pemob_p1/models/produk.dart';
+import 'package:pemob_p1/pages/checkout_page.dart';
 
 import '../drawer.dart';
 
@@ -91,7 +92,12 @@ class _KeranjangPageState extends State<KeranjangPage> {
               ),
               TextButton(
                   style: TextButton.styleFrom(backgroundColor: Colors.blue),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => CheckoutPage(
+                              key: widget.key,
+                            )));
+                  },
                   child: Text("Checkout",
                       key: widget.key,
                       style: const TextStyle(
